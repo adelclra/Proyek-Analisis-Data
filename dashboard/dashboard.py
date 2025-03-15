@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-data_path = "dashboard/all_data.csv" 
+data_path = r"Proyek-Analisis-Data/dashboard/all_data.csv"
 df = pd.read_csv(data_path) 
 
 df["cnt"] = df["cnt_x"] + df["cnt_y"]
