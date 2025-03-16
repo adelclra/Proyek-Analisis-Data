@@ -5,13 +5,16 @@ import seaborn as sns
 from pathlib import Path
 
 def load_data():
-    file_path = Path("C:/Users/adelc/Downloads/submission/Proyek-Analisis-Data/dashboard/main_data.csv")
-
-    if file_path.exists():
-        return pd.read_csv(file_path)
-    else:
-        st.error(f"File '{file_path.name}' tidak ditemukan di direktori: {file_path.resolve().parent}")
-        return None 
+    try:
+        file_path = Path("main_data.csv")
+        df = pd.read_csv(file_path)
+        return df
+    except FileNotFoundError:
+        st.error(f"File 'main_data.csv' tidak ditemukan di direktori: {Path.cwd()}")
+        return None
+    except Exception as e:
+        st.error(f"Terjadi kesalahan saat membaca file: {e}")
+        return None
         
 # Load dataset
 all_df = load_data()
