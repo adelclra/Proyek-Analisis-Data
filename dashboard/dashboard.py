@@ -6,7 +6,7 @@ from pathlib import Path
 
 def load_data():
     try:
-        file_path = Path("main_data.csv")
+        file_path = Path(_file_).parent / "main_data.csv"
         df = pd.read_csv(file_path)
         return df
     except FileNotFoundError:
