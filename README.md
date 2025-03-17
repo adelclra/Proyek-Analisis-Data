@@ -29,7 +29,7 @@ pip freeze > requirements.txt
 
 # 2. Menjalankan Streamlit Dashboard
 Pastikan berada di direktori proyek, lalu jalankan:
-cd ..
+cd Proyek-Analisis-Data
 streamlit run dashboard.py
 
 Jika berhasil, akan muncul pesan seperti:
